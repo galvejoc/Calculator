@@ -71,9 +71,11 @@ export function functionCalculateNumber({ number1, number2, operation, isPositiv
       result = Math.round(num1 * num2 * 100) / 100;
       break;
     case '3':
-      if (num2 === 0) 
+      if (num2 === 0){
+        result = num2
         throw new Error("División por cero no está permitida");
-      result = num2
+      }
+      result = Math.round(num1 / num2 * 100) / 100;
       break;
     default:
       throw new Error(`Operación '${operation}' no reconocida`);
